@@ -9,8 +9,13 @@ public class dataloader {
         List<String> facts = new ArrayList<>();
 
         try {
-            File file = new File("src/data/facts.txt");
-            Scanner sc = new Scanner(file);
+            // Use getResource to load from classpath (place facts.txt in src/data/)
+            InputStream is = getClass().getResourceAsStream("/data/facts.txt");
+            if (is == null) {
+                System.out.println("facts.txt not found in classpath");
+                return facts;
+            }
+            Scanner sc = new Scanner(is);
 
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
@@ -18,8 +23,8 @@ public class dataloader {
             }
 
             sc.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("facts.txt file not found");
+        } catch (Exception e) {
+            System.out.println("Error loading facts: " + e.getMessage());
         }
 
         return facts;
