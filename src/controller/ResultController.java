@@ -1,0 +1,8 @@
+package controller;
+
+public class ResultController {
+
+    public void showResult(String result) {
+        System.out.println("Fact Check Result: " + result);
+    }
+}
