@@ -1,7 +1,7 @@
 import controller.InputController;
 import controller.ResultController;
 import service.FactService;
-import data.dataloader;
+import data.Dataloader;
 import model.Fact;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class Main {
         String news = inputController.getUserInput();
 
         // Step 2: Load facts (List<String>)
-        dataloader loader = new dataloader();
+        Dataloader loader = new Dataloader();
         List<String> factStrings = loader.loadFacts();
 
         // Step 3: Convert String facts → Fact objects

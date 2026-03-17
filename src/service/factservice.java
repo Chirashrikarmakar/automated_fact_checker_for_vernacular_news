@@ -9,7 +9,7 @@ public class FactService {
 
         for (Fact fact : facts) {
             if (fact.getFactText().equalsIgnoreCase(news)) {
-                return "Likely True";
+                return "Verified";
             }
         }
 

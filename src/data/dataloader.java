@@ -3,7 +3,7 @@ package data;
 import java.io.*;
 import java.util.*;
 
-public class dataloader {
+public class Dataloader {
 
     public List<String> loadFacts() {
         List<String> facts = new ArrayList<>();
